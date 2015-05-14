@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<title>Woodland :: Test :: Wattie</title>
+ 
+<link rel="stylesheet" href="css/jquery/jquery-ui.css" type="text/css">
+<style type="text/css">
+
+
+#css a:link,a:visited{width:150px;height:20px;display:block;margin: 0 0 10px 10px; background:#000;float:left;}
+#css a:link:before{content:" [" attr(href) "] ";}
+
+#css  > a:nth-child(4){clear:left;}
+#css  > a:nth-child(7){clear:left;}
+
+#css  > a:nth-child(8):before{content:""}
+#css  > a:nth-child(9):before{content:""}
+#css  > a:nth-child(8){background:#f00;}
+#css  > a:nth-child(9){background:#f00;}
+
+
+#css > a:nth-child(3){-webkit-animation: flash 300ms  infinite, spin 4000ms linear infinite;animation: flash 300ms  infinite, spin 4000ms linear infinite;}
+
+@-webkit-keyframes flash
+{
+  100% {background-color: #00ff00;}
+}
+@keyframes flash
+{
+  100% {background-color: #00ff00;}
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+</style>
+</head>
+ 
+<body>
+<h2>Jquery Test</h2>
+<input type="text" id="testdate">
+<div id="css">
+<h2>CSS Test</h2>
+<a href="http://we.ee" target="_blank"></a>
+<a href="http://we.ee" target="_blank"></a>
+<a href="http://we.ee" target="_blank"></a>
+<a href="http://we.ee" target="_blank"></a>
+<a href="http://we.ee" target="_blank"></a>
+<a href="http://we.ee" target="_blank"></a>
+<a href="http://we.ee" target="_blank"></a>
+<a href="http://we.ee" target="_blank"></a>
+</div>
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="js/jquery/jquery-ui.min.js"></script>
+<script>
+
+
+
+
+    var unavailableDates = ["10-5-2015", "18-5-2015", "12-5-2015"];
+
+    function unavailable(date) {
+        dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+        if ($.inArray(dmy, unavailableDates) == -1) {
+            return [true, ""];
+        } else {
+            return [false, "", "Unavailable"];
+        }
+    }
+
+    $(function() {
+        $("#testdate").datepicker({
+            dateFormat: 'dd MM yy',
+            beforeShowDay: unavailable
+        });
+
+    });
+
+</script>
+</body>
+</html>

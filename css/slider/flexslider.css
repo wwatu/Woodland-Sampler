@@ -1,0 +1,254 @@
+/*
+ * jQuery headslider v2.4.0
+ * http://www.woothemes.com/headslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ * 
+ */
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.woodland-container a:hover,
+.woodland-slider a:hover,
+.woodland-container a:focus,
+.woodland-slider a:focus {
+  outline: none;
+}
+.slides,
+.slides > li,
+.woodland-control-nav,
+.woodland-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.woodland-pauseplay span {
+  text-transform: capitalize;
+}
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+.headslider {
+  margin: 0;
+  padding: 0;
+}
+.headslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+.headslider .slides img {
+  width: 100%;
+  display: block;
+}
+.headslider .slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+html[xmlns] .headslider .slides {
+  display: block;
+}
+* html .headslider .slides {
+  height: 1%;
+}
+.no-js .headslider .slides > li:first-child {
+  display: block;
+}
+/* ====================================================================================================================
+ * WOODLAND
+ * ====================================================================================================================*/
+.headslider {
+  margin: 0;
+  background: #ffffff;
+  position: relative;
+  top:0px;
+  right:0px;
+  left:0px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.headslider .slides img {
+  height: auto;
+}
+.woodland-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.loading .woodland-viewport {
+  max-height: 300px;
+}
+.carousel li {
+  margin-right: 5px;
+}
+
+.woodland-direction-nav a {
+  text-decoration: none;
+  display: block;
+  width: 23px;
+  height: 44px;
+  margin: -41px 0 0;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+  
+  
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.woodland-direction-nav a:before {
+    display: block;
+    position: absolute;
+    content: ''!important;
+    width: 23px;
+    height: 44px;
+	top: 0px;
+	left: 0px;
+    background-image: url(../../img/sprites.png);
+}
+.woodland-direction-nav a.woodland-next:before {
+  background-position: -25px 0;
+}
+.woodland-direction-nav .woodland-prev {
+  left: -50px;
+}
+.woodland-direction-nav .woodland-next {
+  right: -50px;
+  text-align: right;
+}
+.headslider:hover .woodland-direction-nav .woodland-prev {
+  opacity: 0.7;
+  left: 40px;
+}
+.headslider:hover .woodland-direction-nav .woodland-prev:hover {
+  opacity: 1;
+}
+.headslider:hover .woodland-direction-nav .woodland-next {
+  opacity: 0.7;
+  right: 40px;
+}
+.headslider:hover .woodland-direction-nav .woodland-next:hover {
+  opacity: 1;
+}
+.woodland-direction-nav .woodland-disabled {
+  opacity: 0!important;
+  cursor: default;
+}
+.woodland-pauseplay a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  opacity: 0.8;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000;
+}
+.woodland-pauseplay a:before {
+  font-family: "headslider-icon";
+  font-size: 20px;
+  display: inline-block;
+  content: '\f004';
+}
+.woodland-pauseplay a:hover {
+  opacity: 1;
+}
+.woodland-pauseplay a .woodland-play:before {
+  content: '\f003';
+}
+.woodland-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  z-index:1000;
+  text-align: center;
+}
+.woodland-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+}
+.woodland-control-paging li a {
+  width: 15px;
+  height: 15px;
+  display: block;
+  border: 1px solid #FFF;
+  cursor: pointer;
+  text-indent: -9999px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.woodland-control-paging li a:hover {
+  background: #fff;
+  background: rgb(255,255,255);
+}
+.woodland-control-paging li a.woodland-active {
+  background: #fff;
+  background: rgb(255,255,255);
+  cursor: default;
+}
+.woodland-control-thumbs {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
+}
+.woodland-control-thumbs li {
+  width: 25%;
+  float: left;
+  margin: 0;
+}
+.woodland-control-thumbs img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: .7;
+  cursor: pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.woodland-control-thumbs img:hover {
+  opacity: 1;
+}
+.woodland-control-thumbs .woodland-active {
+  opacity: 1;
+  cursor: default;
+}
+
+
+
+/* ====================================================================================================================
+ * RESPONSIVE
+ * ====================================================================================================================*/
+@media screen and (max-width: 860px) {
+  .woodland-direction-nav .woodland-prev {
+    opacity: 1;
+    left: 10px;
+  }
+  .woodland-direction-nav .woodland-next {
+    opacity: 1;
+    right: 10px;
+  }
+}

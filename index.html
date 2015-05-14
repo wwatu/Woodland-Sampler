@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<title>Woodland :: Sampler :: Wattie</title>
+ 
+<link rel="stylesheet" href="css/woodland.css" type="text/css" />
+<link rel="stylesheet" href="css/slider/flexslider.css" type="text/css">
+<link rel="stylesheet" href="css/jquery/jquery-ui.css" type="text/css">
+<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="css/woodland-ie.css" />
+<![endif]-->
+
+</head>
+ 
+<body>
+<!-- MODAL -->
+<div id="boxes">
+    
+    <!-- #Modal window -->
+    <div id="dialog" class="window">
+		<div class="heading">
+			<h2>Register your interest</h2>
+			<a href="#" class="close">Close it</a>
+		</div>
+	
+		<div class="content">
+			<table class="shipping">
+				<tr>
+					<th>Shipping info</th>
+					<th></th>
+				</tr>			
+				<tr>
+					<td>Europe</td>
+					<td>1-3 days</td>
+				</tr>
+				<tr>
+					<td>North America</td>
+					<td>2 weeks</td>
+				</tr>
+				<tr>
+					<td>South America</td>
+					<td>1 month</td>
+				</tr>				<tr>
+					<td>Australia</td>
+					<td>1-3 months</td>
+				</tr>				<tr>
+					<td>Asia</td>
+					<td>1-3 months</td>
+				</tr>				<tr>
+					<td>Australia</td>
+					<td>1-3 months</td>
+				</tr>
+			</table>
+			<form>
+				<div class="row">
+					<label for="name">What's your name?</label>
+					<input type="text" id="name" placeholder="">
+				</div>
+				<div class="row">
+					<label for="product">What product would you like?</label>
+					 <select id="product">
+						<option value=""  disabled selected>Please choose a product...</option>
+						<option value="stump">Stump</option>
+						<option value="pine">Pine</option>
+					 </select> 					
+				</div>		
+				<div class="row">
+					<label for="location">Where are you from?</label>
+					<input type="text" id="location" name="location" placeholder="">
+
+				</div>		
+				<div class="row">
+					<label for="email">What's your e-mail?</label>
+					<input type="text" id="email" placeholder="">
+				</div>
+				<div class="row">
+					<label >Could you upload a picture of your animal?</label>
+					
+					<div class="fileupload">
+						<div class="btn-upload">
+							<p>Choose File</p>
+							<input id="upload-input" type="file" class="upload" />
+						</div>
+					</div>
+					<input id="file-input" placeholder="No file selected" disabled="disabled" />
+					
+				</div>
+				
+				
+				<div class="row">
+				<label>Which statement is true?</label>
+					<input name="pickone" id="radio1" class="radio" type="radio"><label for="radio1" class="radio-label">A dog person</label>
+					<input name="pickone" id="radio2" class="radio" checked="checked" type="radio"><label for="radio2" class="radio-label">A cat person</label>
+				
+				</div>
+				
+				
+				<div class="row">
+					<label>When would you like to receive your product?</label>
+					
+					<div class="daterange">
+						<input type="text" class="fromdate icon"  id="fromdate" placeholder="">
+						<span></span>
+						<label>to</label>
+						<input type="text" class="todate icon" id="todate" placeholder="">
+						<span></span>
+					</div>
+					
+				</div>				
+				<div class="row">
+					<label >Any additional comments?</label>
+					<textarea rows="3"></textarea>
+				</div>	
+				
+				<div class="row"><hr></div>
+				
+				
+				<div class="row">
+				<input name="terms" id="terms" class="checkbox" type="checkbox"><label for="terms" class="tick-label">I have read your <a href="#">Terms</a> about all of this</label>
+				</div>
+				
+			  <button type="submit" class="btn btn-primary">Send your request</button>
+			</form>
+		
+		
+		</div>
+	
+    </div>
+    
+    <!-- Modal Mask -->    
+     <div id="mask"></div>
+</div>
+
+
+<!-- Header -->
+<div id="header">
+	<!-- Mobile menu trigger -->
+	<a class="hamburger-menu"  onclick="toggleMob()"></a>
+	<!-- Navigation -->
+<ul class="navigation">
+  <li class="logo"><a href="index.html" class="logo"><img src="img/logo.png" alt="..."></a></li>
+  <li><a href="#">The Product</a></li>
+  <li><a href="#">Order Yours</a></li>
+  <li><a href="#">About Us</a></li>
+  <li><a href="#" class="drop">Support</a>
+    <ul>
+        <li><a href="#">Read our FAQ</a></li>
+        <li><a href="#">Post a Support Ticket</a></li>
+        <li><a href="#">Orders & Shipping</a></li>
+    </ul>
+	<span></span>
+  </li>
+  <li><a href="#">Get in touch with us</a></li>
+  <li class="social"><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="86" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div></li>
+</ul>
+	<!-- Slider -->
+<div class="headslider">
+  <ul class="slides">
+    <li>
+      <img src="img/slider/slide1.png" alt="..." />
+	  
+	  <div class="content">
+	  <h2>NO MORE <span>CHEAP</span> IMITATIONS</h2>
+	  <p>Here at Woodland we take great care for our products. Every detail is meticulously obsessed over in our research and development labs.</p>
+	  <a href="#dialog" name="modal" class="btn btn-primary">Register your interest</a>
+	  <a href="#" class="btn btn-default">Read more</a>
+	  </div>
+	  
+    </li>
+    <li>
+      <img src="img/slider/slide1.png" alt="..." />
+	  
+	  <div class="content">
+	  <h2>NO MORE CHEAP IMITATIONS, NO MORE</h2>
+	  <p>Here at Woodland we take great care for our products. Every detail is meticulously obsessed over in our research and development labs. Here at Woodland we take great care for our products. Every detail is meticulously obsessed over in our research and development labs. Here at Woodland we take great care for our products. Every detail is meticulously obsessed over in our research and development labs.</p>
+	  </div>	  
+	  
+    </li>
+    <li>
+      <img src="img/slider/slide1.png" alt="..." />
+	  
+	  <div class="content">
+	  <h2>NO MORE CHEAP IMITATIONS</h2>
+	  <p>Here at Woodland we take great care for our products. Every detail is meticulously obsessed over in our research and development labs.</p>
+
+	  </div>
+	  
+    </li>
+  </ul>
+</div>
+
+</div>
+
+<!-- CONTENT -->
+<div id="content">
+	<div class="features">
+	 <div class="table">
+	  <div class="row">
+		<div class="col wide mov">
+		<span></span>
+		 <div class="txt">
+			<h2>Watch Our Keynote</h2>
+			<p>See all the details from our press event</p>
+		 </div>	
+		</div>
+		<div class="col narrow prod">
+			<span></span>
+			<h2>See Our<br> Product Range</h2>
+			<p>Experience the world of Woodland</p>
+		</div>
+		<div class="col narrow social">
+			<span></span>
+			<h2>Woodland On<br> Social Media</h2>
+			<p>Get the latest on new products, campaigns, etc</p>
+		</div>
+	  </div>
+	 </div>
+	</div>
+
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+	<!-- Google map -->
+  <div id="map-canvas">
+  </div>
+	<!-- Contact info -->
+  <div class="footer">
+	<address>
+	  46 Deshon St<br>
+	  Woolloongabba QLD 4102<br>
+	  Australia<br>
+	  <p class="tel">P: +123 748 38 932</p>
+	  E: <a href="mailto:#">hello@woodlandproducts.com</a>
+	</address>
+	
+	<p class="copy">All Rights Reserved 2015</p>
+  </div>
+
+
+
+<!-- Scripts -->
+
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="js/jquery/jquery-ui.min.js"></script>
+
+<!-- Flexslider -->
+<script src="js/flexslider/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript" >
+  $(window).load(function() {
+    $('.headslider').flexslider({
+	 animation: "fade",
+	 namespace: "woodland-",
+	 prevText:"",
+	 nextText:""
+	});
+	
+	
+  });
+</script>
+
+<!-- Mobile Menu Toggle -->
+<script>
+function toggleMob() {
+$('ul.navigation').toggleClass('mobile_menu');
+$('body').toggleClass('mobile_body');
+$('a.hamburger-menu').toggleClass('hamburger-menu-toggle');
+
+}
+</script>
+<!-- Socials -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Google Map -->
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false">
+</script>
+<script>
+        function initialize(){
+			var myLatLng = new google.maps.LatLng(38.871013, -77.055907);
+			var image = 'img/map_pointer.png';
+            var mapOptions = {
+                zoom: 17,
+				center: myLatLng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+				disableDefaultUI: true	
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				map: map,
+				icon:image
+			});        
+		}	
+        google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<!-- File Upload -->
+<script type="text/javascript">
+document.getElementById("upload-input").onchange = function () {
+document.getElementById("file-input").value = this.value;
+};
+</script>
+<!-- Modal -->
+<script>
+$(document).ready(function() {    
+    //select all the a tag with name equal to modal
+    $('a[name=modal]').click(function(e) {
+        //Cancel the link behavior
+        e.preventDefault();
+        //Get the A tag
+        var id = $(this).attr('href');
+    
+        //Get the screen height and width
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+    
+        //Set height and width to mask to fill up the whole screen
+        $('#mask').css({'width':maskWidth,'height':maskHeight});
+        
+        //transition effect        
+        $('#mask').fadeIn(500);     
+        $('#mask').fadeTo("slow",0.8);    
+    
+        //Get the window height and width
+        var winH = $(window).height();
+        var winW = $(window).width();
+              
+        //Set the popup window to center
+        $(id).css('top',  winH/2-$(id).height()/2);
+        $(id).css('left', winW/2-$(id).width()/2);
+    
+        //transition effect
+        $(id).fadeIn(1000); 
+     
+    });
+    
+    //if close button is clicked
+    $('.window .close').click(function (e) {
+
+		//Fade out
+		$('#mask, .window').fadeOut(500); 
+
+    });        
+    
+	//if mask is clicked
+	// $('#mask').click(function () {
+    //    $(this).hide();
+	//     $('.window').hide();
+	// });            
+    
+});
+</script>
+
+<!-- Autocomplete & Datepicker -->
+<script>
+
+
+
+var availableTags = [
+	"ActionScript",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+$( "#location" ).autocomplete({
+	source: availableTags
+});
+
+
+
+
+
+
+
+
+
+$(function() {
+    $( "#fromdate" ).datepicker();
+  });
+
+$(function() {
+    $( "#todate" ).datepicker();
+  });
+
+
+
+</script>
+
+</body>
+</html>
